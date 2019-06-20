@@ -1,19 +1,19 @@
 <!--header start-->
-<header class="l-header l-header_overlay">
+<header class="l-header @isset($overlay) l-header_overlay @endisset">
 
-    <div class="l-navbar l-navbar_expand l-navbar_t-dark-trans js-navbar-sticky">
+    <div class="l-navbar l-navbar_expand @isset($overlay) l-navbar_t-dark-trans @else l-navbar_t-light @endisset js-navbar-sticky">
         <div class="container-fluid">
             <nav class="menuzord js-primary-navigation" role="navigation" aria-label="Primary Navigation">
 
                 <!--logo start-->
                 <a href="index.html" class="logo-brand">
-                    <img class="retina" src="assets/img/logo-dark.png" alt="Massive">
+                    <img class="retina" src="@isset($overlay) assets/img/logo-dark.png @else assets/img/logo.png @endisset" alt="Massive">
                 </a>
                 <!--logo end-->
 
                 <!--mega menu start-->
                 <ul class="menuzord-menu menuzord-right c-nav_s-standard">
-                    <li class="active"><a href="#">Home</a>
+                    <li class="@isset($overlay) active @endisset"><a href="#">Home</a>
                         <ul class="dropdown">
                             <li><a href="#">Home General</a>
                                 <ul class="dropdown">
@@ -171,7 +171,7 @@
                         </ul>
                     </li>
 
-                    <li class=""><a href="javascript:void(0)">Pages</a>
+                    <li class="@isset($overlay) @else active @endisset"><a href="javascript:void(0)">Pages</a>
                         <div class="megamenu">
                             <div class="megamenu-row">
                                 <div class="col3">

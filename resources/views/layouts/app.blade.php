@@ -11,9 +11,10 @@
    
     <div class="wrapper">
 
-        @include("layouts.header")
+        @include("layouts.header", ["overlay" => (isset($overlay)) ? $overlay : null])
 
         @yield("hero")
+        @yield("page-title")
         
         <!--body content start-->
         <section class="body-content">
