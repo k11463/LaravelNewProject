@@ -11,22 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view("index");
+Route::get('/', function (Request $request) {
+    return view("index",);
 });
 
-Route::get('/about', function () {
+Route::get('/about', function (Request $request) {
     return view("about");
 });
 
-Route::get('/contact', function () {
+Route::get('/contact', function (Request $request) {
     return view("contact");
-});
-
-Route::get('/posts', function () {
-    return "posts list";
-});
-
-Route::get('/posts/{id}', function ($id) {
-    return "sigleposts"."  ".$id;
 });

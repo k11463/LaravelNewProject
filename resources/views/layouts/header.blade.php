@@ -13,13 +13,13 @@
 
                 <!--mega menu start-->
                 <ul class="menuzord-menu menuzord-right c-nav_s-standard">
-                    <li class="@isset($overlay) active @endisset">
+                    <li class="@if(request() -> is('/')) active @endif">
                         <a href="/">Home</a>
                     </li>
-                    <li class="">
+                    <li class="@if(request() -> is('about')) active @endif">
                         <a href="/about">About</a>
                     </li>
-                    <li class="">
+                    <li class="@if(request() -> is('contact')) active @endif">
                         <a href="/contact">Contact</a>
                     </li>
                 </ul>
