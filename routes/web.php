@@ -22,3 +22,11 @@ Route::get('/about', function (Request $request) {
 Route::get('/contact', function (Request $request) {
     return view("contact");
 });
+
+Route::get('posts', function () {
+    return view('posts.list');
+});
+
+Route::get('posts/{id}', function ($id) {
+    return 'single post:'.$id;
+});
