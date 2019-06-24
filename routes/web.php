@@ -24,7 +24,8 @@ Route::get('/contact', function (Request $request) {
 });
 
 Route::get('posts', function () {
-    return view('posts.list');
+    $posts = [1, 2, 3, 4, 5];
+    return view('posts.list', ['posts' => $posts]);
 });
 
 Route::get('posts/{id}', function ($id) {
