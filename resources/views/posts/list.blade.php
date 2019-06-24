@@ -8,9 +8,9 @@
                 <div class="col-md-12">
                     <h4 class="text-uppercase">Blog Listing</h4>
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a>
+                        <li><a href="/">Home</a>
                         </li>
-                        <li class="active"><a href="#">Blog</a>
+                        <li class="active"><a href="/posts">Blog</a>
                         </li>
                         <li class="active">Blog Listing</li>
                     </ol>
@@ -34,9 +34,9 @@
                     </div>
                     <div class="blog-post">
                         <div class="full-width">
-                            <img src="assets/img/post/p12.jpg" alt="" />
+                            <img src="/assets/img/post/p12.jpg" alt="" />
                         </div>
-                        <h4 class="text-uppercase"><a href="blog-single.html">standard blog post with photo</a></h4>
+                        <h4 class="text-uppercase"><a href="/posts/9487">standard blog post with photo</a></h4>
                         <ul class="post-meta">
                             <li><i class="fa fa-user"></i>posted by <a href="#">admin</a>
                             </li>
@@ -47,7 +47,7 @@
                         </ul>
                         <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
                             doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                        <a href="blog-single.html" class="btn btn-small btn-dark-solid  "> Continue Reading</a>
+                        <a href="/posts/9487" class="btn btn-small btn-dark-solid  "> Continue Reading</a>
                     </div>
                 </div>
                 <!--classic image post-->
@@ -64,17 +64,17 @@
                                 <ul class="slides">
                                     <li>
                                         <a href="javascript:;" title="Freshness Photo">
-                                            <img src="assets/img/post/p3.jpg" alt="">
+                                            <img src="/assets/img/post/p3.jpg" alt="">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:;" title="Awesome Lightbox">
-                                            <img src="assets/img/post/p2.jpg" alt="">
+                                            <img src="/assets/img/post/p2.jpg" alt="">
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:;" title="Massive UI Components">
-                                            <img src="assets/img/post/p1.jpg" alt="">
+                                            <img src="/assets/img/post/p1.jpg" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -234,7 +234,7 @@
                         <h6 class="text-uppercase">about author</h6>
                     </div>
                     <div class="full-width avatar">
-                        <img src="assets/img/post/avatar.jpg" alt="" />
+                        <img src="/assets/img/post/avatar.jpg" alt="" />
                     </div>
                     <p>Persuaded to return to the shoemaker's shop, young Edward struggled on till three years of his wretched apprenticeship had passed over.</p>
 
@@ -251,7 +251,7 @@
                         <li>
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="assets/img/post/post-thumb.jpg" alt="" />
+                                    <img src="/assets/img/post/post-thumb.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="w-desk">
@@ -262,7 +262,7 @@
                         <li>
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="assets/img/post/post-thumb-2.jpg" alt="" />
+                                    <img src="/assets/img/post/post-thumb-2.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="w-desk">
@@ -273,7 +273,7 @@
                         <li>
                             <div class="thumb">
                                 <a href="#">
-                                    <img src="assets/img/post/post-thumb-3.jpg" alt="" />
+                                    <img src="/assets/img/post/post-thumb-3.jpg" alt="" />
                                 </a>
                             </div>
                             <div class="w-desk">

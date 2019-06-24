@@ -28,5 +28,5 @@ Route::get('posts', function () {
 });
 
 Route::get('posts/{id}', function ($id) {
-    return 'single post:'.$id;
+    return view('posts.show');
 });

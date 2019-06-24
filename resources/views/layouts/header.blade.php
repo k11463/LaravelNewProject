@@ -7,7 +7,7 @@
 
                 <!--logo start-->
                 <a href="/" class="logo-brand">
-                    <img class="retina" src="@isset($overlay) assets/img/logo-dark.png @else assets/img/logo.png @endisset" alt="Massive">
+                    <img class="retina" src="@isset($overlay) /assets/img/logo-dark.png @else /assets/img/logo.png @endisset" alt="Massive">
                 </a>
                 <!--logo end-->
 
@@ -21,6 +21,9 @@
                     </li>
                     <li class="@if(request() -> is('contact')) active @endif">
                         <a href="/contact">Contact</a>
+                    </li>
+                    <li class="@if(request() -> is('posts')) active @endif">
+                        <a href="/posts">Blog</a>
                     </li>
                 </ul>
                 <!--mega menu end-->
