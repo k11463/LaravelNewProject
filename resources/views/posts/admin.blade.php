@@ -25,13 +25,18 @@
         <div class="clearfix toolbox">
             <a href="/posts/create" class="btn btn-primary pull-right">Create Post</a>
         </div>
-        <div class="list-group">
+        <ul class="list-group">
             @foreach ($posts as $key => $post)
-            <a href="/posts/show/{{ $post->id }}" class="list-group-item">
+            <li class="list-group-item clearfix centerY">
                 {{ $post->title }}
-            </a>
+                <span class="pull-right">
+                    <a href="/posts/show/{{ $post->id }}" class="btn btn-default">View</a>
+                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
+                    <button class="btn btn-danger">Delete</button>
+                </span>
+            </li>
             @endforeach
-        </div>
+        </ul>
     </div>
 </div>
 @endsection
