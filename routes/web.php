@@ -37,7 +37,8 @@ Route::get('/contact', function (Request $request) {
 
 // /posts/create
 
-//CRUD 順序 -> /posts/create -> /posts/87
+//CRUD
+Route::get('/posts/admin', 'PostController@admin');
 Route::get('/posts/create', 'PostController@create');
 
 Route::post('/posts', 'PostController@store');

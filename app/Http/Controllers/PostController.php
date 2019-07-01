@@ -7,6 +7,12 @@ use App\Post;
 
 class PostController extends Controller
 {
+    public function admin()
+    {
+        $posts = Post::all();
+        return view('posts.admin', ['posts' => $posts]);
+    }
+
     public function index()
     {
         $posts = Post::all();

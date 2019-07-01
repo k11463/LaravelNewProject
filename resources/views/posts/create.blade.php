@@ -10,9 +10,9 @@
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a>
                     </li>
-                    <li class="active"><a href="/posts">Blog</a>
+                    <li class="active"><a href="/posts/admin">Blog Admin Panel</a>
                     </li>
-                    <li class="active">Blog Listing</li>
+                    <li class="active">Create Post</li>
                 </ol>
             </div>
         </div>
@@ -35,6 +35,7 @@
                 <textarea class="form-control" name="content" cols="80" rows="8" placeholder="Enter content"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-default" onclick="window.history.back()">Cancel</button>
         </form>
     </div>
 </div>
