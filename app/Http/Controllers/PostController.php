@@ -33,4 +33,9 @@ class PostController extends Controller
         // redirect to index
         return redirect('/posts');
     }
+
+    public function show(Post $post)
+    {
+        return view('posts.showByAdmin', ['post' => $post]);
+    }
 }
