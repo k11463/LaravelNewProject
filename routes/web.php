@@ -11,6 +11,8 @@
 |
 */
 
+// date_default_timezone_get('Asia/Taipei');
+
 Route::get('/', function (Request $request) {
     return view("index",);
 });
