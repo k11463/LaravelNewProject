@@ -37,7 +37,7 @@
                         <div class="full-width">
                             <img src="/assets/img/post/p12.jpg" alt="" />
                         </div>
-                        <h4 class="text-uppercase"><a href="/posts/9487">standard blog post with photo</a></h4>
+                    <h4 class="text-uppercase"><a href="/posts/9487">{{ $post->title }}</a></h4>
                         <ul class="post-meta">
                             <li><i class="fa fa-user"></i>posted by <a href="#">admin</a>
                             </li>
@@ -46,14 +46,13 @@
                             <li><i class="fa fa-comments"></i>  <a href="#">4 comments</a>
                             </li>
                         </ul>
-                        <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>{{ str_limit($post->content, 250) }}</p>
                         <a href="/posts/9487" class="btn btn-small btn-dark-solid  "> Continue Reading</a>
                     </div>
                 </div>
                 <!--classic image post-->
                 @endforeach
-                
+
                 <!--pagination-->
                 <div class="text-center">
                     <ul class="pagination custom-pagination">
