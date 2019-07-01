@@ -38,4 +38,17 @@ class PostController extends Controller
     {
         return view('posts.showByAdmin', ['post' => $post]);
     }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $post->fill($request->all());
+        $post->save();
+
+        return redirect('/posts/admin');
+    }
 }
