@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
 
@@ -28,6 +29,7 @@ class PostController extends Controller
     {
         $post = new Post;
         $post->fill($request->all());
+        $post->user_id = Auth::id();
         $post->save();
 
         // redirect to index

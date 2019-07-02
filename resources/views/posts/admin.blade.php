@@ -27,8 +27,11 @@
         </div>
         <ul class="list-group">
             @foreach ($posts as $key => $post)
-            <li class="list-group-item clearfix centerY">
-                {{ $post->title }}
+            <li class="list-group-item clearfix">
+                <div class="pull-left">
+                    <div class="tltle">{{ $post->title }}</div>
+                    <small class="author">{{ $post->user->name }}</small>
+                </div>
                 <span class="pull-right">
                     <a href="/posts/show/{{ $post->id }}" class="btn btn-default">View</a>
                     <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
