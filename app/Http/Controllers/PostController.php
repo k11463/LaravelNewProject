@@ -47,8 +47,15 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $post->fill($request->all());
-        $post->updated_at =  date("Y-m-d H:i:s");
+        $post->updated_at = date("Y-m-d H:i:s");
         $post->save();
+
+        return redirect('/posts/admin');
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
 
         return redirect('/posts/admin');
     }

@@ -11,8 +11,6 @@
 |
 */
 
-// date_default_timezone_get('Asia/Taipei');
-
 Route::get('/', function (Request $request) {
     return view("index",);
 });
@@ -29,7 +27,6 @@ Route::get('/contact', function (Request $request) {
 Route::get('/posts/admin', 'PostController@admin');
 Route::get('/posts/create', 'PostController@create');
 Route::get('/posts/show/{post}', 'PostController@show');
-// Route::get('/posts/delete/{post}', 'PostController@delete');
 
 Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@show');
