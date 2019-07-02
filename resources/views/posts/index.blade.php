@@ -1,24 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('page-title')
-    <!--page title start-->
-    <section class="page-title">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="text-uppercase">Blog Listing</h4>
-                    <ol class="breadcrumb">
-                        <li><a href="/">Home</a>
-                        </li>
-                        <li class="active"><a href="/posts">Blog</a>
-                        </li>
-                        <li class="active">Blog Listing</li>
-                    </ol>
-                </div>
+<!--page title start-->
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase">Blog Listing</h4>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a>
+                    </li>
+                    <li class="active"><a href="/posts">Blog</a>
+                    </li>
+                    <li class="active">Blog Listing</li>
+                </ol>
             </div>
         </div>
-    </section>
-    <!--page title end-->
+    </div>
+</section>
+<!--page title end-->
 @endsection
 
 @section('content')
@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-8">
                 @foreach ($posts as $key => $post)
-                    <!--classic image post-->
+                <!--classic image post-->
                 <div class="blog-classic">
                     <div class="date">
                         24
@@ -37,16 +37,17 @@
                         <div class="full-width">
                             <img src="/assets/img/post/p12.jpg" alt="" />
                         </div>
-                    <h4 class="text-uppercase"><a href="/posts/9487">{{ $post->title }}</a></h4>
+                        <h4 class="text-uppercase"><a href="/posts/9487">{{ $post->title }}</a></h4>
                         <ul class="post-meta">
                             <li><i class="fa fa-user"></i>posted by <a href="#">admin</a>
                             </li>
-                            <li><i class="fa fa-folder-open"></i>  <a href="#">lifestyle</a>, <a href="#">travel</a>, <a href="#">fashion</a>
+                            <li><i class="fa fa-folder-open"></i> <a href="#">lifestyle</a>, <a href="#">travel</a>, <a
+                                    href="#">fashion</a>
                             </li>
-                            <li><i class="fa fa-comments"></i>  <a href="#">4 comments</a>
+                            <li><i class="fa fa-comments"></i> <a href="#">4 comments</a>
                             </li>
                         </ul>
-                    <p>{{ str_limit($post->content, 250) }}</p>
+                        <p>{{ str_limit($post->content, 250) }}</p>
                         <a href="/posts/9487" class="btn btn-small btn-dark-solid  "> Continue Reading</a>
                     </div>
                 </div>
@@ -98,7 +99,8 @@
                     <div class="full-width avatar">
                         <img src="/assets/img/post/avatar.jpg" alt="" />
                     </div>
-                    <p>Persuaded to return to the shoemaker's shop, young Edward struggled on till three years of his wretched apprenticeship had passed over.</p>
+                    <p>Persuaded to return to the shoemaker's shop, young Edward struggled on till three years of his
+                        wretched apprenticeship had passed over.</p>
 
                     <span class="">- Nelson Leonard</span>
                 </div>

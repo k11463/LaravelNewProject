@@ -1,24 +1,24 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
 
 @section('page-title')
-    <!--page title start-->
-    <section class="page-title">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="text-uppercase">Blog Single</h4>
-                    <ol class="breadcrumb">
-                        <li><a href="/">Home</a>
-                        </li>
-                        <li class="active"><a href="/posts">Blog</a>
-                        </li>
-                        <li class="active">Blog Single</li>
-                    </ol>
-                </div>
+<!--page title start-->
+<section class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-uppercase">Blog Single</h4>
+                <ol class="breadcrumb">
+                    <li><a href="/">Home</a>
+                    </li>
+                    <li class="active"><a href="/posts">Blog</a>
+                    </li>
+                    <li class="active">Blog Single</li>
+                </ol>
             </div>
         </div>
-    </section>
-    <!--page title end-->
+    </div>
+</section>
+<!--page title end-->
 @endsection
 
 @section('content')
@@ -36,30 +36,46 @@
                         <ul class="post-meta">
                             <li><i class="fa fa-user"></i>posted by <a href="#">admin</a>
                             </li>
-                            <li><i class="fa fa-folder-open"></i>  <a href="#">lifestyle</a>, <a href="#">travel</a>, <a href="#">fashion</a>
+                            <li><i class="fa fa-folder-open"></i> <a href="#">lifestyle</a>, <a href="#">travel</a>, <a
+                                    href="#">fashion</a>
                             </li>
-                            <li><i class="fa fa-comments"></i>  <a href="#">4 comments</a>
+                            <li><i class="fa fa-comments"></i> <a href="#">4 comments</a>
                             </li>
                         </ul>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>. Ab adipisci architecto consequatur debitis eos eum hic illum ipsam itaque laborum magni minima molestias nostrum numquam odit officia pariatur
-                            perspiciatis placeat porro quae rem, sequi sit soluta temporibus ullam voluptas voluptates. Aliquid amet architecto culpa cumque eius enim esse eum eveniet ex, fugiat illo ipsum laudantium, minima nemo porro sequi
-                            tempora veritatis vero voluptate, voluptatem. Culpa ducimus est eveniet, iste iusto officiis quas repudiandae rerum sit tenetur totam voluptas? Accusamus accusantium alias aliquam aliquid animi commodi dignissimos
-                            dolore doloremque dolorum exercitationem fugiat illum, iste laboriosam maiores molestiae nam odio officia officiis omnis optio placeat quaerat quia quibusdam quis quo ratione sapiente sed sequi sit tenetur unde
+                        <p>Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing elit</a>. Ab adipisci
+                            architecto consequatur debitis eos eum hic illum ipsam itaque laborum magni minima molestias
+                            nostrum numquam odit officia pariatur
+                            perspiciatis placeat porro quae rem, sequi sit soluta temporibus ullam voluptas voluptates.
+                            Aliquid amet architecto culpa cumque eius enim esse eum eveniet ex, fugiat illo ipsum
+                            laudantium, minima nemo porro sequi
+                            tempora veritatis vero voluptate, voluptatem. Culpa ducimus est eveniet, iste iusto officiis
+                            quas repudiandae rerum sit tenetur totam voluptas? Accusamus accusantium alias aliquam
+                            aliquid animi commodi dignissimos
+                            dolore doloremque dolorum exercitationem fugiat illum, iste laboriosam maiores molestiae nam
+                            odio officia officiis omnis optio placeat quaerat quia quibusdam quis quo ratione sapiente
+                            sed sequi sit tenetur unde
                             ut veniam voluptas! Dicta, voluptatum!</p>
 
                         <div class="blog-post">
                             <blockquote class="quote-post">
                                 <p>
-                                    Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus error
+                                    Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores
+                                    nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut
+                                    perspiciatis unde omnis iste natus error
                                 </p>
                             </blockquote>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at debitis deleniti dignissimos ea enim iste laboriosam nihil omnis possimus quia, tempora, totam voluptatibus! Animi consectetur dolor in laboriosam
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at debitis deleniti
+                            dignissimos ea enim iste laboriosam nihil omnis possimus quia, tempora, totam voluptatibus!
+                            Animi consectetur dolor in laboriosam
                             unde.</p>
 
-                        <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                        <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis
+                            omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis
+                            iste natus error sit voluptatem accusantium
+                            doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et
+                            quasi architecto beatae vitae dicta sunt explicabo.</p>
 
 
                         <div class="inline-block">
@@ -137,7 +153,8 @@
                             <li class="media">
 
                                 <a class="pull-left" href="#">
-                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt="" width="50" height="50">
+                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt=""
+                                        width="50" height="50">
                                 </a>
 
                                 <div class="media-body">
@@ -150,14 +167,16 @@
                                     </div>
 
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
+                                        ante eleifend eleifend.
                                     </p>
 
                                     <!--  second level Comment start-->
                                     <div class="media">
 
                                         <a class="pull-left" href="#">
-                                            <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt="" width="50" height="50">
+                                            <img class="media-object comment-avatar" src="/assets/img/post/a1.png"
+                                                alt="" width="50" height="50">
                                         </a>
 
                                         <div class="media-body">
@@ -171,7 +190,8 @@
                                             </div>
 
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at
+                                                magna ut ante eleifend eleifend.
                                             </p>
 
 
@@ -179,7 +199,8 @@
                                             <div class="media">
 
                                                 <a class="pull-left" href="#">
-                                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt="" width="50" height="50">
+                                                    <img class="media-object comment-avatar"
+                                                        src="/assets/img/post/a1.png" alt="" width="50" height="50">
                                                 </a>
 
                                                 <div class="media-body">
@@ -193,7 +214,8 @@
                                                     </div>
 
                                                     <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                        at magna ut ante eleifend eleifend.
                                                     </p>
 
 
@@ -216,7 +238,8 @@
                             <li class="media">
 
                                 <a class="pull-left" href="#">
-                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt="" width="50" height="50">
+                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt=""
+                                        width="50" height="50">
                                 </a>
 
                                 <div class="media-body">
@@ -230,7 +253,8 @@
                                     </div>
 
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
+                                        ante eleifend eleifend.
                                     </p>
 
                                 </div>
@@ -242,7 +266,8 @@
                             <li class="media">
 
                                 <a class="pull-left" href="#">
-                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt="" width="50" height="50">
+                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt=""
+                                        width="50" height="50">
                                 </a>
 
                                 <div class="media-body">
@@ -256,7 +281,8 @@
                                     </div>
 
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut ante eleifend eleifend.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
+                                        ante eleifend eleifend.
                                     </p>
 
                                 </div>
@@ -280,23 +306,27 @@
 
                                 <div class="col-md-6 form-group">
                                     <!-- Name -->
-                                    <input type="text" name="name" id="name" class=" form-control" placeholder="Name *" maxlength="100" required="">
+                                    <input type="text" name="name" id="name" class=" form-control" placeholder="Name *"
+                                        maxlength="100" required="">
                                 </div>
 
                                 <div class="col-md-6 form-group">
                                     <!-- Email -->
-                                    <input type="email" name="email" id="email" class=" form-control" placeholder="Email *" maxlength="100" required="">
+                                    <input type="email" name="email" id="email" class=" form-control"
+                                        placeholder="Email *" maxlength="100" required="">
                                 </div>
 
 
                                 <div class="form-group col-md-12">
                                     <!-- Website -->
-                                    <input type="text" name="website" id="website" class=" form-control" placeholder="Website" maxlength="100">
+                                    <input type="text" name="website" id="website" class=" form-control"
+                                        placeholder="Website" maxlength="100">
                                 </div>
 
                                 <!-- Comment -->
                                 <div class="form-group col-md-12">
-                                    <textarea name="text" id="text" class=" form-control" rows="6" placeholder="Comment" maxlength="400"></textarea>
+                                    <textarea name="text" id="text" class=" form-control" rows="6" placeholder="Comment"
+                                        maxlength="400"></textarea>
                                 </div>
 
                                 <!-- Send Button -->
@@ -343,7 +373,8 @@
                     <div class="full-width avatar">
                         <img src="/assets/img/post/avatar.jpg" alt="" />
                     </div>
-                    <p>Persuaded to return to the shoemaker's shop, young Edward struggled on till three years of his wretched apprenticeship had passed over.</p>
+                    <p>Persuaded to return to the shoemaker's shop, young Edward struggled on till three years of his
+                        wretched apprenticeship had passed over.</p>
 
                     <span class="">- Nelson Leonard</span>
                 </div>
