@@ -48,7 +48,7 @@
                             </li>
                         </ul>
                         <p>{{ str_limit($post->content, 250) }}</p>
-                        <a href="/posts/9487" class="btn btn-small btn-dark-solid  "> Continue Reading</a>
+                        <a href="/posts/{{ $post->id }}" class="btn btn-small btn-dark-solid  "> Continue Reading</a>
                     </div>
                 </div>
                 <!--classic image post-->

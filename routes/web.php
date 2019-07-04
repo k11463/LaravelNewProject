@@ -30,13 +30,15 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/posts/show/{post}', 'PostController@show');
 
     Route::post('/posts', 'PostController@store');
-    Route::get('/posts/{post}', 'PostController@show');
+    // Route::get('/posts/{post}', 'PostController@show');
     Route::put('/posts/{post}', 'PostController@update');
     Route::delete('/posts/{post}', 'PostController@destroy');
 
     Route::get('/posts/{post}/edit', 'PostController@edit');
-    Route::get('/posts', 'PostController@index');
 });
+
+Route::get('/posts', 'PostController@index');
+Route::get('/posts/{post}', 'PostController@show');
 
 Auth::routes();
 
