@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreBlogPost;
 use App\Post;
 
 class PostController extends Controller
@@ -25,7 +26,7 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreBlogPost $request)
     {
         $post = new Post;
         $post->fill($request->all());
@@ -51,7 +52,7 @@ class PostController extends Controller
         return view('posts.edit', ['post' => $post]);
     }
 
-    public function update(Request $request, Post $post)
+    public function update(StoreBlogPost $request, Post $post)
     {
         $post->fill($request->all());
         $post->updated_at = date("Y-m-d H:i:s");
