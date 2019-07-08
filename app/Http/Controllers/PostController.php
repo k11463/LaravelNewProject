@@ -23,7 +23,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $post = new Post;
+        return view('posts.create', ['post' => $post, 'action' => 'create']);
     }
 
     public function store(StoreBlogPost $request)
@@ -49,7 +50,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('posts.edit', ['post' => $post]);
+        return view('posts.edit', ['post' => $post, 'action' => 'edit']);
     }
 
     public function update(StoreBlogPost $request, Post $post)
