@@ -34,13 +34,26 @@ break;
     <input type="hidden" name="_method" value="put">
     @endif
     <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{ $post->title }}">
+        <label>標題</label>
+        <input type="text" class="form-control" name="title" placeholder="輸入標題" value="{{ $post->title }}">
+    </div>
+    <div class="form-group clearfix">
+        <label>分類</label><label class="pull-right">目前分類 : @if($post->category_id != null) {{ $post->category->name }}
+            @else 無分類
+            @endif</label>
+        <select class="form-control" name="category_id">
+            <option selected value>請選擇分類</option>
+            @foreach ($categories as $key => $category)
+            <option value="{{ $category->id }}" @if($category->id === $post->category_id) selected
+                @endif>{{ $category->name }}
+            </option>
+            @endforeach
+        </select>
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Content</label>
+        <label>內容</label>
         <textarea class="form-control" name="content" cols="80" rows="8"
-            placeholder="Enter content">{{ $post->content }}</textarea>
+            placeholder="輸入內容">{{ $post->content }}</textarea>
     </div>
     <button type="submit" class="btn btn-primary">{{ $data->buttonText }}</button>
     <button type="button" class="btn btn-secondary" onclick="window.history.back()">取消</button>
