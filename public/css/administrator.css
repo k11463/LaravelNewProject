@@ -10646,3 +10646,8 @@ a.text-dark:focus {
   }
 }
 
+.toolbox {
+  margin-bottom: 20px;
+  text-align: right;
+}
+

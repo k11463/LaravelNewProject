@@ -10,7 +10,7 @@
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a>
                     </li>
-                    <li class="active"><a href="/posts/admin">Blog Admin Panel</a>
+                    <li class=""><a href="/posts/admin">Blog Admin Panel</a>
                     </li>
                     <li class="active">Create Post</li>
                 </ol>

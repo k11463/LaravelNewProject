@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/css/administrator.css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </head>
 
 <body>
@@ -79,6 +79,7 @@
         </nav>
 
         <main class="py-4">
+            @yield('page-title')
             @yield('content')
         </main>
     </div>
