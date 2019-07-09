@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function() {
     Route::delete('/posts/{post}', 'PostController@destroy');
 
     Route::get('/posts/{post}/edit', 'PostController@edit');
+
+    Route::resource('/categories', 'CategoryController')->except(['show']);
 });
 
 Route::get('/posts', 'PostController@index');

@@ -86,5 +86,6 @@
 </body>
 
 <script src="/js/administrator.js"></script>
+@yield('script')
 
 </html>

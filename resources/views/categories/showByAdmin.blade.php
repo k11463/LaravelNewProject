@@ -6,13 +6,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-uppercase">單篇文章管理</h4>
+                <h4 class="text-uppercase">Blog Single</h4>
                 <ol class="breadcrumb">
-                    <li><a href="/">首頁</a>
+                    <li><a href="/">Home</a>
                     </li>
-                    <li class="active"><a href="/posts/admin">文章管理頁面</a>
+                    <li class="active"><a href="/posts/admin">Blog Admin Panel</a>
                     </li>
-                    <li class="active">單篇文章管理</li>
+                    <li class="active">Blog Single</li>
                 </ol>
             </div>
         </div>
@@ -28,7 +28,7 @@
         <small class="author">{{ $post->user->name }}</small>
         <div class="toolbox">
             <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">編輯</a>
-            <button class="btn btn-danger" onclick="deletePost({{ $post->id }}, '{{ $post->title }}')">刪除</button>
+            <button class="btn btn-danger" onclick="deletePost({{ $post->id }})">刪除</button>
         </div>
         <div class="content">
             {{ $post->content }}
@@ -44,8 +44,8 @@
 
 @section('script')
 <script>
-    const deletePost = (id, title) => {
-        const result = confirm("你想刪除 <" + title + '> 這篇文章嗎?');
+    const deletePost = (id) => {
+        const result = confirm("Do you want to delete this post?");
         if(result) {
             $("#delete_post").attr('action', '/posts/' + id).submit();
         }

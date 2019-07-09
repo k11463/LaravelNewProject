@@ -6,13 +6,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-uppercase">建立文章</h4>
+                <h4 class="text-uppercase">Edit Post</h4>
                 <ol class="breadcrumb">
-                    <li><a href="/">首頁</a>
+                    <li><a href="/">Home</a>
                     </li>
-                    <li class=""><a href="/posts/admin">文章管理頁面</a>
+                    <li class="active"><a href="/posts/admin">Blog Admin Panel</a>
                     </li>
-                    <li class="active">建立文章</li>
+                    <li class="active">Edit Post</li>
                 </ol>
             </div>
         </div>
@@ -24,7 +24,7 @@
 @section('content')
 <div class="page-content">
     <div class="container">
-        @include('posts._form', ['action' => 'create'])
+        @include('posts._form')
     </div>
 </div>
 @endsection

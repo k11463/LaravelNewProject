@@ -6,11 +6,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-uppercase">文章管理頁面</h4>
+                <h4 class="text-uppercase">分類管理頁面</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/">首頁</a>
-                    </li>
-                    <li class="breadcrumb-item active">文章管理頁面</li>
+                    <li class="breadcrumb-item"><a href="/">首頁</a></li>
+                    <li class="breadcrumb-item active">分類管理頁面</li>
                 </ol>
             </div>
         </div>
@@ -23,20 +22,18 @@
 <div class="page-content">
     <div class="container">
         <div class="clearfix toolbox">
-            <a href="/posts/create" class="btn btn-primary">建立文章</a>
+            <a href="/categories/create" class="btn btn-primary">建立分類</a>
         </div>
         <ul class="list-group">
-            @foreach ($posts as $key => $post)
+            @foreach ($categories as $key => $category)
             <li class="list-group-item clearfix">
                 <div class="float-left">
-                    <div class="tltle">{{ $post->title }}</div>
-                    <small class="author">{{ $post->user->name }}</small>
+                    <div class="tltle">{{ $category->name }}</div>
                 </div>
                 <span class="float-right">
-                    <a href="/posts/show/{{ $post->id }}" class="btn btn-secondary">內容</a>
-                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">編輯</a>
+                    <a href="/catrgories/{{ $category->id }}/edit" class="btn btn-primary">編輯</a>
                     <button class="btn btn-danger"
-                        onclick="deletePost({{ $post->id }}, '{{ $post->title }}')">刪除</button>
+                        onclick="deleteCategory({{ $category->id }}, '{{ $category->name }}')">刪除</button>
                 </span>
             </li>
             @endforeach
@@ -52,10 +49,10 @@
 
 @section('script')
 <script>
-    const deletePost = (id, title) => {
-        const result = confirm('你想刪除 <' + title + '> 這篇文章嗎?');
+    const deleteCategory = (id, name) => {
+        const result = confirm('你想刪除 <' + name + '> 這個類別嗎?');
         if(result) {
-            const actionUrl = '/posts/' + id;
+            const actionUrl = '/catrgories/' + id;
             $('#delete_form').attr('action', actionUrl).submit();
         }
     }
