@@ -31,7 +31,7 @@
                     <div class="tltle">{{ $category->name }}</div>
                 </div>
                 <span class="float-right">
-                    <a href="/catrgories/{{ $category->id }}/edit" class="btn btn-primary">編輯</a>
+                    <a href="/categories/{{ $category->id }}/edit" class="btn btn-primary">編輯</a>
                     <button class="btn btn-danger"
                         onclick="deleteCategory({{ $category->id }}, '{{ $category->name }}')">刪除</button>
                 </span>
@@ -52,7 +52,7 @@
     const deleteCategory = (id, name) => {
         const result = confirm('你想刪除 <' + name + '> 這個類別嗎?');
         if(result) {
-            const actionUrl = '/catrgories/' + id;
+            const actionUrl = '/categories/' + id;
             $('#delete_form').attr('action', actionUrl).submit();
         }
     }

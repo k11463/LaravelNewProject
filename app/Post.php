@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['title', 'content', 'updated_at'];
+    protected $fillable = ['title', 'content'];
 
     public function user() //一篇文章屬於一個使用者
     {

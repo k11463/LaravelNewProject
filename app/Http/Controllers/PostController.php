@@ -56,7 +56,6 @@ class PostController extends Controller
     public function update(StoreBlogPost $request, Post $post)
     {
         $post->fill($request->all());
-        $post->updated_at = date("Y-m-d H:i:s");
         $post->save();
 
         return redirect('/posts/admin');
