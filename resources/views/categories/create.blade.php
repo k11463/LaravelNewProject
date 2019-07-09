@@ -10,7 +10,7 @@
                 <ol class="breadcrumb">
                     <li><a href="/">首頁</a>
                     </li>
-                    <li class=""><a href="/categories/admin">分類管理頁面</a>
+                    <li class=""><a href="/categories">分類管理頁面</a>
                     </li>
                     <li class="active">建立分類</li>
                 </ol>
