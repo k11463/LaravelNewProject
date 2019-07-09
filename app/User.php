@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function posts()
+    public function posts() //一個使用者可能有多個文章
     {
         return $this->hasMany('App\Post');
     }
