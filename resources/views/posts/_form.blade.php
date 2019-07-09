@@ -38,7 +38,7 @@ break;
         <input type="text" class="form-control" name="title" placeholder="輸入標題" value="{{ $post->title }}">
     </div>
     <div class="form-group clearfix">
-        <label>分類</label><label class="pull-right">目前分類 : @if($post->category_id != null) {{ $post->category->name }}
+        <label>分類</label><label class="pull-right">目前分類 : @if(isset($post->category)) {{ $post->category->name }}
             @else 無分類
             @endif</label>
         <select class="form-control" name="category_id">
