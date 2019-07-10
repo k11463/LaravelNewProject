@@ -25,7 +25,10 @@
 <div class="page-content">
     <div class="container">
         <h1 style="margin-bottom: 0px;"> {{ $post->title }} </h1>
-        @if(isset($post->category)) <small class="text-muted">#{{ $post->category->name }}</small> @endif
+        @if (isset($post->category))
+        <small class="text-muted">#{{ $post->category->name }}</small>
+        @endif
+        <small class="text-muted">{{ $post->tagsString() }}</small>
         <small class="author">{{ $post->user->name }}</small>
         <div class="toolbox" style="margin-top: 3px;">
             <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">編輯</a>
