@@ -53,16 +53,17 @@ class PostController extends Controller
         $post->save();
 
         $tags = explode(',', $request->tags); //把標籤用逗號隔開
+        $this->addTagsToPost($tags, $post);
+
+        return redirect('/posts');
+    }
+
+    private function addTagsToPost($tags, $post)
+    {
         foreach($tags as $key => $tag) {
             $model = Tag::firstOrCreate(['name' => $tag]);
-            $post->tags()->attach($model->id);
+            $post->tags()->attach($model->id); //建立post和tag關連並把資料填入post_tag裡面
         }
-        // TODO
-        // create / load tags
-        // connect post & tags
-
-        // redirect to index
-        return redirect('/posts');
     }
 
     public function show(Post $post)
@@ -86,6 +87,14 @@ class PostController extends Controller
     {
         $post->fill($request->all());
         $post->save();
+
+        // foreach($post->tags as $key => $tag) {
+        //     $post->tags()->detach($tag->id); //取消關聯並把資料從post_tag裡移除
+        // }
+        $post->tags()->detach(); //跟上面一樣
+
+        $tags = explode(',', $request->tags); //把標籤用逗號隔開
+        $this->addTagsToPost($tags, $post);
 
         return redirect('/posts/admin');
     }

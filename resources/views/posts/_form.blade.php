@@ -53,7 +53,7 @@ break;
 
     <div class="form-group clearfix">
         <label>標籤</label>
-        <input type="text" class="form-control" name="tags" value="">
+        <input type="text" class="form-control" name="tags" value="{{ $post->tagsString() }}">
     </div>
 
     <div class="form-group">
