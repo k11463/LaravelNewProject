@@ -8,6 +8,7 @@ use App\Http\Requests\StoreBlogPost;
 use App\Post;
 use App\Category;
 use App\Tag;
+use App\User;
 
 class PostController extends Controller
 {
@@ -20,22 +21,25 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        $categories = Category::all();
-        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+        return view('posts.index', ['posts' => $posts]);
     }
 
     public function indexWithCategory(Category $category)
     {
         $posts = Post::where('category_id', $category->id)->get();
-        $categories = Category::all();
-        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+        return view('posts.index', ['posts' => $posts]);
     }
 
-    public function indexWithPostUser(Post $post)
+    public function indexWithUser(User $user)
     {
-        $posts = Post::where('user_id', $post->user->id)->get();
-        $categories = Category::all();
-        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+        $posts = Post::where('user_id', $user->id)->get();
+        return view('posts.index', ['posts' => $posts]);
+    }
+
+    public function indexWithTag(Tag $tag)
+    {
+        $posts = $tag->posts;
+        return view('posts.index', ['posts' => $posts]);
     }
 
     public function create()
@@ -69,7 +73,8 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $categories = Category::all();
-        return view('posts.show', ['post' => $post, 'categories' => $categories]);
+        $tags = Tag::all();
+        return view('posts.show', ['post' => $post, 'categories' => $categories, 'tags' => $tags]);
     }
 
     public function showByAdmin(Post $post)

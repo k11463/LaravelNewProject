@@ -9,20 +9,26 @@
                 <h4 class="text-uppercase">
                     文章列表
                     @if (request()->category)
-                    / {{ request()->category->name }}
+                    / 分類_{{ request()->category->name }}
                     @endif
-                    @if (request()->post)
-                    / User_{{ request()->post->user->name }}
+                    @if (request()->user)
+                    / 發文者_{{ request()->user->name }}
+                    @endif
+                    @if (request()->tag)
+                    / 標籤_{{ request()->tag->name }}
                     @endif
                 </h4>
                 <ol class="breadcrumb">
                     <li><a href="/">首頁</a></li>
                     @if (request()->category)
                     <li class=""><a href="/posts">文章列表</a></li>
-                    <li>分類：{{ request()->category->name }}</li>
-                    @elseif (request()->post)
+                    <li>分類_{{ request()->category->name }}</li>
+                    @elseif (request()->user)
                     <li class=""><a href="/posts">文章列表</a></li>
-                    <li>發文者：{{ request()->post->user->name }}</li>
+                    <li>發文者_{{ request()->user->name }}</li>
+                    @elseif (request()->tag)
+                    <li class=""><a href="/posts">文章列表</a></li>
+                    <li>標籤_{{ request()->tag->name }}</li>
                     @else
                     <li class="active">文章列表</li>
                     @endif
@@ -53,7 +59,7 @@
                         <h4 class="text-uppercase"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h4>
                         <ul class="post-meta">
                             <li><i class="fa fa-user"></i><a
-                                    href="/posts/postUser/{{ $post->user_id }}">{{ $post->user->name }}</a>
+                                    href="/posts/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
                             </li>
                             @if ($post->category)
                             <li><i class="fa fa-folder-open"></i><a
@@ -91,7 +97,7 @@
 
             </div>
             <div class="col-md-4">
-                @include('posts._sidebar', ['categories' => $categories])
+                @include('posts._sidebar')
             </div>
         </div>
     </div>

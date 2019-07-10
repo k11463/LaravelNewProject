@@ -34,7 +34,8 @@
                         </div>
                         <h4 class="text-uppercase"><a href="blog-single.html">{{ $post->title }}</a></h4>
                         <ul class="post-meta">
-                            <li><i class="fa fa-user"></i><a href="#">{{ $post->user->name }}</a>
+                            <li><i class="fa fa-user"></i><a
+                                    href="/posts/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
                             </li>
                             <li><i class="fa fa-folder-open"></i> <a href="#">{{ $post->category->name }}</a></li>
                             <li><i class="fa fa-comments"></i> <a href="#">4 comments</a>
@@ -48,7 +49,7 @@
                             <div class="widget-tags">
                                 <h6 class="text-uppercase">Tags </h6>
                                 @foreach ($post->tags as $key => $tag)
-                                <a href="">{{ $tag->name }}</a>
+                                <a href="/posts/tag/{{ $tag->id }}">{{ $tag->name }}</a>
                                 @endforeach
                             </div>
                             @endif
@@ -313,7 +314,7 @@
 
             </div>
             <div class="col-md-4">
-                @include('posts._sidebar', ['categories' => $categories])
+                @include('posts._sidebar')
             </div>
         </div>
     </div>
