@@ -30,6 +30,13 @@ class PostController extends Controller
         return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
     }
 
+    public function indexWithPostUser(Post $post)
+    {
+        $posts = Post::where('user_id', $post->user->id)->get();
+        $categories = Category::all();
+        return view('posts.index', ['posts' => $posts, 'categories' => $categories]);
+    }
+
     public function create()
     {
         $post = new Post;
