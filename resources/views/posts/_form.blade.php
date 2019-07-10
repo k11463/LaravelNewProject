@@ -50,6 +50,12 @@ break;
             @endforeach
         </select>
     </div>
+
+    <div class="form-group clearfix">
+        <label>標籤</label>
+        <input type="text" class="form-control" name="tags" value="">
+    </div>
+
     <div class="form-group">
         <label>內容</label>
         <textarea class="form-control" name="content" cols="80" rows="8"

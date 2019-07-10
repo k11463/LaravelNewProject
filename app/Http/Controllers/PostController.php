@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreBlogPost;
 use App\Post;
 use App\Category;
-use Illuminate\Support\Facades\DB;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -51,6 +51,15 @@ class PostController extends Controller
         $post->fill($request->all());
         $post->user_id = Auth::id();
         $post->save();
+
+        $tags = explode(',', $request->tags); //把標籤用逗號隔開
+        foreach($tags as $key => $tag) {
+            $model = Tag::firstOrCreate(['name' => $tag]);
+            $post->tags()->attach($model->id);
+        }
+        // TODO
+        // create / load tags
+        // connect post & tags
 
         // redirect to index
         return redirect('/posts');
