@@ -1,7 +1,7 @@
 <!--latest post widget-->
 <div class="widget">
     <div class="heading-title-alt text-left heading-border-bottom">
-        <h6 class="text-uppercase">latest post</h6>
+        <h6 class="text-uppercase">最新文章</h6>
     </div>
     <ul class="widget-latest-post">
         <li>
@@ -22,7 +22,7 @@
 <!--category widget-->
 <div class="widget">
     <div class="heading-title-alt text-left heading-border-bottom">
-        <h6 class="text-uppercase">category</h6>
+        <h6 class="text-uppercase">分類</h6>
     </div>
     <ul class="widget-category">
         @foreach ($categories as $key => $category)
@@ -35,7 +35,7 @@
 <!--comments widget-->
 <div class="widget">
     <div class="heading-title-alt text-left heading-border-bottom">
-        <h6 class="text-uppercase">Latest comments </h6>
+        <h6 class="text-uppercase">最新評論</h6>
     </div>
     <ul class="widget-comments">
         <li>Jonathan on <a href="javascript:;">Vesti blulum quis dolor </a>
@@ -53,7 +53,7 @@
 <!--tags widget-->
 <div class="widget">
     <div class="heading-title-alt text-left heading-border-bottom">
-        <h6 class="text-uppercase">tag cloud</h6>
+        <h6 class="text-uppercase">標籤</h6>
     </div>
     <div class="widget-tags">
         <a href="">Portfolio</a>

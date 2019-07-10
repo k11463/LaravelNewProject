@@ -43,9 +43,8 @@
                 <!--classic image post-->
                 <div class="blog-classic">
                     <div class="date">
-                        {{ $post->created_at->day }}
-                        <span>{{ strtoupper($post->created_at->shortEnglishMonth) }}
-                            {{ $post->created_at->year }}</span>
+                        {{ $post->created_at->month }} / {{ $post->created_at->day }}
+                        <span>{{ $post->created_at->year }}</span>
                     </div>
                     <div class="blog-post">
                         <div class="full-width">

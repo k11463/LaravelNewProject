@@ -17,4 +17,9 @@ class Post extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function tags() //一篇文章可能有多個標籤
+    {
+        return $this->belongsToMany('App\Tag');
+    }
 }
