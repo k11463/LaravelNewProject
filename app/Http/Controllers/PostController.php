@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreBlogPost;
 use App\Post;
 use App\Category;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -57,11 +58,12 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $categories = Category::all();
         if (Auth::check()) {
             return view('posts.showByAdmin', ['post' => $post]);
         }
         else {
-            return view('posts.show', ['post' => $post]);
+            return view('posts.show', ['post' => $post, 'categories' => $categories]);
         }
     }
 

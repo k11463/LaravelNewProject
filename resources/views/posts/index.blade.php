@@ -9,10 +9,10 @@
                 <h4 class="text-uppercase">
                     文章列表
                     @if (request()->category)
-                    / 分類：{{ request()->category->name }}
+                    / {{ request()->category->name }}
                     @endif
                     @if (request()->post)
-                    / 發文者：{{ request()->post->user->name }}
+                    / User_{{ request()->post->user->name }}
                     @endif
                 </h4>
                 <ol class="breadcrumb">
@@ -53,8 +53,8 @@
                         </div>
                         <h4 class="text-uppercase"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h4>
                         <ul class="post-meta">
-                            <li><i class="fa fa-user"></i><a href="/posts/postUser/{{ $post->user_id }}">發文者：
-                                    {{ $post->user->name }}</a>
+                            <li><i class="fa fa-user"></i><a
+                                    href="/posts/postUser/{{ $post->user_id }}">{{ $post->user->name }}</a>
                             </li>
                             @if ($post->category)
                             <li><i class="fa fa-folder-open"></i><a
@@ -64,7 +64,6 @@
                             </li>
                         </ul>
                         <p>{{ str_limit($post->content, 250) }}</p>
-                        <a href="/posts/{{ $post->id }}" class="btn btn-small btn-dark-solid  ">繼續閱讀</a>
                     </div>
                 </div>
                 <!--classic image post-->
@@ -93,75 +92,7 @@
 
             </div>
             <div class="col-md-4">
-                <!--latest post widget-->
-                <div class="widget">
-                    <div class="heading-title-alt text-left heading-border-bottom">
-                        <h6 class="text-uppercase">latest post</h6>
-                    </div>
-                    <ul class="widget-latest-post">
-                        <li>
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="/assets/img/post/post-thumb.jpg" alt="" />
-                                </a>
-                            </div>
-                            <div class="w-desk">
-                                <a href="#">Old Father Getup</a>
-                                April 25, 2014
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!--latest post widget-->
-
-                <!--category widget-->
-                <div class="widget">
-                    <div class="heading-title-alt text-left heading-border-bottom">
-                        <h6 class="text-uppercase">category</h6>
-                    </div>
-                    <ul class="widget-category">
-                        @foreach ($categories as $key => $category)
-                        <li><a href="/posts/category/{{ $category->id }}">{{ $category->name }}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-                <!--category widget-->
-
-                <!--comments widget-->
-                <div class="widget">
-                    <div class="heading-title-alt text-left heading-border-bottom">
-                        <h6 class="text-uppercase">Latest comments </h6>
-                    </div>
-                    <ul class="widget-comments">
-                        <li>Jonathan on <a href="javascript:;">Vesti blulum quis dolor </a>
-                        </li>
-                        <li>Jane Doe on <a href="javascript:;">Nam sed arcu tellus</a>
-                        </li>
-                        <li>Margarita on <a href="javascript:;">Fringilla ut vel ipsum </a>
-                        </li>
-                        <li>Smith on <a href="javascript:;">Vesti blulum quis dolor sit</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--comments widget-->
-
-                <!--tags widget-->
-                <div class="widget">
-                    <div class="heading-title-alt text-left heading-border-bottom">
-                        <h6 class="text-uppercase">tag cloud</h6>
-                    </div>
-                    <div class="widget-tags">
-                        <a href="">Portfolio</a>
-                        <a href="">Design</a>
-                        <a href="">Link</a>
-                        <a href="">Gallery</a>
-                        <a href="">Video</a>
-                        <a href="">Clean</a>
-                        <a href="">Retina</a>
-                    </div>
-                </div>
-                <!--tags widget-->
-
+                @include('posts._sidebar', ['categories' => $categories])
             </div>
         </div>
     </div>
