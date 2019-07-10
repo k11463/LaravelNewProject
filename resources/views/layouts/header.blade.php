@@ -29,7 +29,7 @@
                         <a href="/posts">文章列表</a>
                     </li>
                     <li>
-                        <a href="/home">使用者管理</a>
+                        <a href="/posts/admin">管理頁面</a>
                     </li>
                 </ul>
                 <!--mega menu end-->

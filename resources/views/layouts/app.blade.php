@@ -43,6 +43,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="/posts/admin" class="nav-link">文章管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/categories" class="nav-link">分類管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">標籤管理</a>
+                        </li>
+
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
