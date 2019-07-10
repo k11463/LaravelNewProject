@@ -6,11 +6,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h4 class="text-uppercase">文章管理頁面</h4>
+                <h4 class="text-uppercase">文章管理</h4>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">首頁</a>
                     </li>
-                    <li class="breadcrumb-item active">文章管理頁面</li>
+                    <li class="breadcrumb-item active">文章管理</li>
                 </ol>
             </div>
         </div>

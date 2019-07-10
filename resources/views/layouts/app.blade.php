@@ -50,7 +50,7 @@
                             <a href="/categories" class="nav-link">分類管理</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">標籤管理</a>
+                            <a href="/tags" class="nav-link">標籤管理</a>
                         </li>
 
                         <!-- Authentication Links -->
