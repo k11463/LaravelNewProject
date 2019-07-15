@@ -35,7 +35,7 @@
             <button class="btn btn-danger" onclick="deletePost({{ $post->id }}, '{{ $post->title }}')">刪除</button>
         </div>
         @if ($post->thumbnail)
-        <img width="400" src="{{ $post->thumbnail }}" alt="thumbnail">
+        <img style="max-width: 240px;" src="{{ $post->thumbnail }}" alt="thumbnail">
         @else
         <div class="text-danger">沒有圖片</div>
         @endif

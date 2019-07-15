@@ -38,7 +38,10 @@ break;
         <input type="text" class="form-control" name="title" placeholder="輸入標題" value="{{ $post->title }}">
     </div>
     <div class="form-group">
-        <label>圖片</label>
+        <label class="d-block">圖片</label>
+        @if ($post->thumbnail)
+        <img src="{{ $post->thumbnail }}" style="max-width: 240px;" alt="thumbnail">
+        @endif
         <input type="file" class="form-control" name="thumbnail">
     </div>
     <div class=" form-group">
