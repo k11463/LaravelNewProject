@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.app')
 
 @section('page-title')
 <!--page title start-->
@@ -8,11 +8,11 @@
             <div class="col-md-12">
                 <h4 class="text-uppercase">建立分類</h4>
                 <ol class="breadcrumb">
-                    <li><a href="/">首頁</a>
+                    <li class="breadcrumb-item"><a href="/">首頁</a>
                     </li>
-                    <li class=""><a href="/categories">分類管理頁面</a>
+                    <li class="breadcrumb-item"><a href="/categories">分類管理頁面</a>
                     </li>
-                    <li class="active">建立分類</li>
+                    <li class="breadcrumb-item active">建立分類</li>
                 </ol>
             </div>
         </div>

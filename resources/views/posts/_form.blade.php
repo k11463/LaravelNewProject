@@ -28,7 +28,7 @@ break;
 </div>
 @endif
 
-<form method="post" action="{{ $data->actionUrl }}">
+<form method="post" action="{{ $data->actionUrl }}" enctype="multipart/form-data">
     @csrf
     @if($action == 'edit')
     <input type="hidden" name="_method" value="put">
@@ -37,10 +37,18 @@ break;
         <label>標題</label>
         <input type="text" class="form-control" name="title" placeholder="輸入標題" value="{{ $post->title }}">
     </div>
-    <div class="form-group clearfix">
-        <label>分類</label><label class="pull-right">目前分類 : @if(isset($post->category)) {{ $post->category->name }}
+    <div class="form-group">
+        <label>圖片</label>
+        <input type="file" class="form-control" name="thumbnail">
+    </div>
+    <div class=" form-group">
+        <label>分類</label>
+        <label class="float-right" style="font-weight:bold;">目前分類 :
+            @if(isset($post->category))
+            {{ $post->category->name }}
             @else 無分類
-            @endif</label>
+            @endif
+        </label>
         <select class="form-control" name="category_id">
             <option selected value>請選擇分類</option>
             @foreach ($categories as $key => $category)

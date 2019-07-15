@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.app')
 
 @section('page-title')
 <!--page title start-->
@@ -8,11 +8,11 @@
             <div class="col-md-12">
                 <h4 class="text-uppercase">編輯文章</h4>
                 <ol class="breadcrumb">
-                    <li><a href="/">首頁</a>
+                    <li class="breadcrumb-item"><a href="/">首頁</a>
                     </li>
-                    <li class="active"><a href="/posts/admin">文章管理頁面</a>
+                    <li class="breadcrumb-item"><a href="/posts/admin">文章管理頁面</a>
                     </li>
-                    <li class="active">編輯文章</li>
+                    <li class="breadcrumb-item active">編輯文章</li>
                 </ol>
             </div>
         </div>

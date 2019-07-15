@@ -54,7 +54,11 @@
                     </div>
                     <div class="blog-post">
                         <div class="full-width">
+                            @if ($post->thumbnail)
+                            <img src="{{ $post->thumbnail }}" alt="thumbnail" />
+                            @else
                             <img src="/assets/img/post/p12.jpg" alt="" />
+                            @endif
                         </div>
                         <h4 class="text-uppercase"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h4>
                         <ul class="post-meta">

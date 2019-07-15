@@ -30,14 +30,23 @@
                 <div class="blog-classic">
                     <div class="blog-post">
                         <div class="full-width">
+                            @if ($post->thumbnail)
+                            <img src="{{ $post->thumbnail }}" alt="thumbnail" />
+                            @else
                             <img src="/assets/img/post/p12.jpg" alt="" />
+                            @endif
                         </div>
                         <h4 class="text-uppercase"><a href="blog-single.html">{{ $post->title }}</a></h4>
                         <ul class="post-meta">
                             <li><i class="fa fa-user"></i><a
                                     href="/posts/user/{{ $post->user->id }}">{{ $post->user->name }}</a>
                             </li>
-                            <li><i class="fa fa-folder-open"></i> <a href="#">{{ $post->category->name }}</a></li>
+                            <li><i class="fa fa-folder-open"></i> <a href="#">
+                                    @if ($post->category)
+                                    {{ $post->category->name }}
+                                    @else
+                                    無分類
+                                    @endif</a></li>
                             <li><i class="fa fa-comments"></i> <a href="#">4 comments</a>
                             </li>
                         </ul>
