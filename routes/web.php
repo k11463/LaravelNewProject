@@ -24,7 +24,7 @@ Route::get('/contact', function (Request $request) {
 });
 
 //CRUD
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth'])->group(function () {
     Route::get('/posts/admin', 'PostController@admin');
     Route::get('/posts/create', 'PostController@create');
     Route::get('/posts/show/{post}', 'PostController@showByAdmin');
@@ -46,6 +46,6 @@ Route::get('/posts/user/{user}', 'PostController@indexWithUser');
 Route::get('/posts/tag/{tag}', 'PostController@indexWithTag');
 Route::get('/posts/{post}', 'PostController@show');
 
-Auth::routes();
+Auth::Routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
