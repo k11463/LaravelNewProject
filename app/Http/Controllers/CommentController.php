@@ -24,11 +24,16 @@ class CommentController extends Controller
 
     public function update(Request $request, Comment $comment)
     {
-        //
+        $comment->fill($request->all());
+        $comment->save();
+
+        return redirect('/posts/' . $request->post_id);
     }
 
-    public function destroy(Comment $comment)
+    public function destroy(Request $request, Comment $comment)
     {
-        //
+        $comment->delete();
+
+        return redirect('/posts/' . $request->post_id);
     }
 }

@@ -24,6 +24,27 @@ Vue.component(
     require("./components/ExampleComponent.vue").default
 );
 
+toggleCommentForm = e => {
+    $(e.currentTarget)
+        .closest(".comment-info")
+        .siblings(".comment-body")
+        .toggleClass("edit");
+};
+
+// $("form.update-comment").submit(e => {
+//     e.preventDefault();
+//     $.post($(e.currentTarget).attr("action"), {
+//         _method: "put",
+//         comment: $(e.currentTarget)
+//             .find('[name="comment"]')
+//             .val()
+//     }).done(data => {
+//         $(e.currentTarget)
+//             .closest(".comment-body")
+//             .toggleClass("edit");
+//     });
+// });
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

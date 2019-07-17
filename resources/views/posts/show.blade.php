@@ -138,14 +138,28 @@
                                             @else
                                             <a href="#">{{ $comment->user->name }}</a>
                                             @endif
+                                            <button class="btn btn-default"
+                                                onclick="toggleCommentForm(event)">編輯</button>
+                                            <button class="btn btn-default"
+                                                onclick="deleteComment({{ $comment->id }})">刪除</button>
                                         </div>
                                         {{ $comment->created_at->format('F d, Y, ').'at '.$comment->created_at->format('G:i') }}
                                         <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
                                     </div>
 
-                                    <p>
-                                        {{ $comment->comment }}
-                                    </p>
+                                    <div class="comment-body">
+                                        <p>
+                                            {{ $comment->comment }}
+                                        </p>
+                                        <form class="update-comment" action="/comments/{{ $comment->id }}"
+                                            method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="put">
+                                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                            <input type="text" name="comment" value="{{ $comment->comment }}">
+                                            <button type="submit">更新</button>
+                                        </form>
+                                    </div>
 
                                 </div>
 
@@ -220,7 +234,23 @@
             <div class="col-md-4">
                 @include('posts._sidebar')
             </div>
+            <form method="post" id="delete_comment">
+                @csrf
+                <input type="hidden" name="_method" value="delete">
+                <input type="hidden" name="post_id" value="{{ $post->id }}">
+            </form>
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+<script>
+    const deleteComment = (id) => {
+        let res = confirm('刪除此流言?');
+        if (res) {
+            $("#delete_comment").attr('action', '/comments/'+id).submit();
+        }
+    }
+</script>
 @endsection
