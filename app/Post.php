@@ -23,10 +23,15 @@ class Post extends Model
         return $this->belongsToMany('App\Tag');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
     public function tagsString()
     {
         $tagsName = [];
-        foreach($this->tags as $key => $tag) {
+        foreach ($this->tags as $key => $tag) {
             $tagsName[] = $tag->name;
         }
         $tagsString = implode(',', $tagsName);
