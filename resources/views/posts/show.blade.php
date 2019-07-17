@@ -47,7 +47,7 @@
                                     @else
                                     無分類
                                     @endif</a></li>
-                            <li><i class="fa fa-comments"></i> <a href="#">4 comments</a>
+                            <li><i class="fa fa-comments"></i> <a href="#">{{ $post->comments->count() }} comments</a>
                             </li>
                         </ul>
 
@@ -116,96 +116,11 @@
                         <!--comments discussion section start-->
 
                         <div class="heading-title-alt text-left heading-border-bottom">
-                            <h4 class="text-uppercase">5 Comments</h4>
+                            <h4 class="text-uppercase">{{ $post->comments->count() }} Comments</h4>
                         </div>
 
                         <ul class="media-list comments-list m-bot-50 clearlist">
-
-                            <!-- Comment Item start-->
-                            <li class="media">
-
-                                <a class="pull-left" href="#">
-                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt=""
-                                        width="50" height="50">
-                                </a>
-
-                                <div class="media-body">
-                                    <div class="comment-info">
-                                        <div class="comment-author">
-                                            <a href="#">John Doe</a>
-                                        </div>
-                                        July 02, 2015, at 11:34
-                                        <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
-                                    </div>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
-                                        ante eleifend eleifend.
-                                    </p>
-
-                                    <!--  second level Comment start-->
-                                    <div class="media">
-
-                                        <a class="pull-left" href="#">
-                                            <img class="media-object comment-avatar" src="/assets/img/post/a1.png"
-                                                alt="" width="50" height="50">
-                                        </a>
-
-                                        <div class="media-body">
-
-                                            <div class="comment-info">
-                                                <div class="comment-author">
-                                                    <a href="#">Maragarita Rose</a>
-                                                </div>
-                                                July 02, 2015, at 11:34
-                                                <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
-                                            </div>
-
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at
-                                                magna ut ante eleifend eleifend.
-                                            </p>
-
-
-                                            <!-- third level Comment start -->
-                                            <div class="media">
-
-                                                <a class="pull-left" href="#">
-                                                    <img class="media-object comment-avatar"
-                                                        src="/assets/img/post/a1.png" alt="" width="50" height="50">
-                                                </a>
-
-                                                <div class="media-body">
-
-                                                    <div class="comment-info">
-                                                        <div class="comment-author">
-                                                            <a href="#">Margarita Rose</a>
-                                                        </div>
-                                                        July 02, 2015, at 11:34
-                                                        <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
-                                                    </div>
-
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                                                        at magna ut ante eleifend eleifend.
-                                                    </p>
-
-
-                                                </div>
-
-                                            </div>
-                                            <!-- third level Comment end -->
-
-                                        </div>
-
-                                    </div>
-                                    <!-- second level Comment end -->
-
-                                </div>
-
-                            </li>
-                            <!-- End Comment Item -->
-
+                            @foreach ($post->comments as $key => $comment)
                             <!-- Comment Item start-->
                             <li class="media">
 
@@ -218,49 +133,25 @@
 
                                     <div class="comment-info">
                                         <div class="comment-author">
-                                            <a href="#">John Doe</a>
+                                            @if (is_null($comment->user_id))
+                                            <a href="#">{{ $comment->name }}</a>
+                                            @else
+                                            <a href="#">{{ $comment->user->name }}</a>
+                                            @endif
                                         </div>
-                                        July 02, 2015, at 11:34
+                                        {{ $comment->created_at->format('F d, Y, ').'at '.$comment->created_at->format('G:i') }}
                                         <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
                                     </div>
 
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
-                                        ante eleifend eleifend.
+                                        {{ $comment->comment }}
                                     </p>
 
                                 </div>
 
                             </li>
                             <!-- End Comment Item -->
-
-                            <!-- Comment Item start-->
-                            <li class="media">
-
-                                <a class="pull-left" href="#">
-                                    <img class="media-object comment-avatar" src="/assets/img/post/a1.png" alt=""
-                                        width="50" height="50">
-                                </a>
-
-                                <div class="media-body">
-
-                                    <div class="comment-info">
-                                        <div class="comment-author">
-                                            <a href="#">John Doe</a>
-                                        </div>
-                                        July 02, 2015, at 11:34
-                                        <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
-                                    </div>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at magna ut
-                                        ante eleifend eleifend.
-                                    </p>
-
-                                </div>
-
-                            </li>
-                            <!-- End Comment Item -->
+                            @endforeach
 
                         </ul>
 
