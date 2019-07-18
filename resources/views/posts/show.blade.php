@@ -132,19 +132,24 @@
                                 <div class="media-body">
 
                                     <div class="comment-info">
+
                                         <div class="comment-author">
-                                            @if (is_null($comment->user_id))
+
                                             <a href="#">{{ $comment->name }}</a>
-                                            @else
-                                            <a href="#">{{ $comment->user->name }}</a>
-                                            @endif
+
+                                            @if ($comment->user && $comment->user->id == Auth::id())
                                             <button class="btn btn-default"
                                                 onclick="toggleCommentForm(event)">編輯</button>
                                             <button class="btn btn-default"
                                                 onclick="deleteComment({{ $comment->id }})">刪除</button>
+                                            @endif
+
                                         </div>
+
                                         {{ $comment->created_at->format('F d, Y, ').'at '.$comment->created_at->format('G:i') }}
+
                                         <a href="#"><i class="fa fa-comment-o"></i>Reply</a>
+
                                     </div>
 
                                     <div class="comment-body">
@@ -156,6 +161,7 @@
                                             @csrf
                                             <input type="hidden" name="_method" value="put">
                                             <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                            <input type="hidden" name="name" value="{{ $comment->name }}">
                                             <input type="text" name="comment" value="{{ $comment->comment }}">
                                             <button type="submit">更新</button>
                                         </form>

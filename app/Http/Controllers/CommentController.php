@@ -22,7 +22,7 @@ class CommentController extends Controller
         return redirect('/posts/' . $request->post_id);
     }
 
-    public function update(Request $request, Comment $comment)
+    public function update(StoreComment $request, Comment $comment)
     {
         $comment->fill($request->all());
         $comment->save();
