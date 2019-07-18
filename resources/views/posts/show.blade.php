@@ -64,48 +64,48 @@
                             @endif
                         </div>
 
-
-                        <div class="clearfix inline-block m-top-50 m-bot-50">
-                            <h6 class="text-uppercase">Share this Post </h6>
-                            <div class="widget-social-link circle">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </div>
-                        </div>
-
-
                         <div class="pagination-row">
 
                             <div class="pagination-post">
+
                                 <div class="prev-post">
-                                    <a href="#">
+                                    @if ($prevPostId)
+                                    <a href="/posts/{{ $prevPostId }}">
                                         <div class="arrow">
                                             <i class="fa fa-angle-double-left"></i>
                                         </div>
                                         <div class="pagination-txt">
-                                            <span>Previous Post</span>
+                                            <span>上一篇文章</span>
                                         </div>
                                     </a>
+                                    @else
+                                    <div class="pagination-txt">
+                                        <span></span>
+                                    </div>
+                                    @endif
                                 </div>
 
                                 <div class="post-list-link">
-                                    <a href="#">
+                                    <a href="/posts">
                                         <i class="fa fa-home"></i>
                                     </a>
                                 </div>
 
                                 <div class="next-post">
-                                    <a href="#">
+                                    @if ($nextPostId)
+                                    <a href="/posts/{{ $nextPostId }}">
                                         <div class="arrow">
                                             <i class="fa fa-angle-double-right"></i>
                                         </div>
                                         <div class="pagination-txt">
-                                            <span>Next Post</span>
+                                            <span>下一篇文章</span>
                                         </div>
                                     </a>
+                                    @else
+                                    <div class="pagination-txt">
+                                        <span></span>
+                                    </div>
+                                    @endif
                                 </div>
 
                             </div>
