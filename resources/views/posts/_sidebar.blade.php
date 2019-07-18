@@ -1,8 +1,12 @@
 @php
 use App\Category;
 use App\Tag;
+use App\Post;
+use App\Comment;
 $categories = Category::all();
-$tags = Tag::has('posts')->withCount('posts')->orderBy('posts_count', 'desc')->get(); // _count可直接印出數量
+$tags = Tag::has('posts')->withCount('posts')->orderBy('posts_count', 'desc'); // _count可直接印出數量
+$latestPosts = Post::orderBy('created_at', 'desc')->take(3)->get();
+$latestComments = Comment::orderBy('created_at', 'desc')->take(3)->get();
 @endphp
 
 <!--latest post widget-->
@@ -11,17 +15,23 @@ $tags = Tag::has('posts')->withCount('posts')->orderBy('posts_count', 'desc')->g
         <h6 class="text-uppercase">最新文章</h6>
     </div>
     <ul class="widget-latest-post">
+        @foreach ($latestPosts as $key => $post)
         <li>
             <div class="thumb">
-                <a href="#">
+                <a href="/posts/{{ $post->id }}">
+                    @if ($post->thumbnail)
+                    <img src="{{ $post->thumbnail }}" alt="thumbnail" />
+                    @else
                     <img src="/assets/img/post/post-thumb.jpg" alt="" />
+                    @endif
                 </a>
             </div>
             <div class="w-desk">
-                <a href="#">標題</a>
-                MAR 5, 2019
+                <a href="#">{{ $post->title }}</a>
+                {{ $post->created_at->format('F d, Y') }}
             </div>
         </li>
+        @endforeach
     </ul>
 </div>
 <!--latest post widget-->
@@ -45,14 +55,11 @@ $tags = Tag::has('posts')->withCount('posts')->orderBy('posts_count', 'desc')->g
         <h6 class="text-uppercase">最新評論</h6>
     </div>
     <ul class="widget-comments">
-        <li>Jonathan on <a href="javascript:;">Vesti blulum quis dolor </a>
+        @foreach ($latestComments as $key => $comment)
+        <li>
+            {{ $comment->name }} on <a href="/posts/{{ $comment->post->id }}">{{ $comment->post->title }}</a>
         </li>
-        <li>Jane Doe on <a href="javascript:;">Nam sed arcu tellus</a>
-        </li>
-        <li>Margarita on <a href="javascript:;">Fringilla ut vel ipsum </a>
-        </li>
-        <li>Smith on <a href="javascript:;">Vesti blulum quis dolor sit</a>
-        </li>
+        @endforeach
     </ul>
 </div>
 <!--comments widget-->

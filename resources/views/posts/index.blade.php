@@ -78,8 +78,11 @@
                 <!--classic image post-->
                 @endforeach
 
-                <!--pagination-->
                 <div class="text-center">
+                    {{ $posts->links() }}
+                </div>
+                <!--pagination-->
+                {{-- <div class="text-center">
                     <ul class="pagination custom-pagination">
                         <li><a href="#">Prev</a>
                         </li>
@@ -96,7 +99,7 @@
                         <li><a href="#">Next</a>
                         </li>
                     </ul>
-                </div>
+                </div> --}}
                 <!--pagination-->
 
             </div>
